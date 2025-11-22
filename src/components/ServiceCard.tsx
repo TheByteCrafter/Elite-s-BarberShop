@@ -2,18 +2,26 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Clock, CurrencyIcon, DollarSign } from "lucide-react";
+import Image from "next/image";
 
 interface ServiceCardProps {
+    image: string;
     title: string;
     description: string;
     price: string;
     duration: string;
+
 }
 
-export function ServiceCard({ title, description, price, duration }: ServiceCardProps) {
+export function ServiceCard({ image, title, description, price, duration }: ServiceCardProps) {
     return (
         <Card className="flex h-full flex-col border-border bg-card transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10">
             <CardHeader>
+                <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-muted/50">
+                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
+                        <Image src={image} alt="Service Image" width={500} height={500} className="object-cover rounded-2xl" />
+                    </div>
+                </div>
                 <CardTitle className="text-xl font-bold text-white">{title}</CardTitle>
                 <CardDescription className="text-muted-foreground">{description}</CardDescription>
             </CardHeader>

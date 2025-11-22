@@ -3,36 +3,42 @@ import { ServiceCard } from "@/components/ServiceCard";
 export default function ServicesPage() {
     const allServices = [
         {
+            image: "https://storage.googleapis.com/msgsndr/nBxcqw0KYdRWRYv4QFkz/media/6772ae4aa28a50a7c9e52141.jpeg",
             title: "Classic Haircut",
             description: "Precision cut tailored to your style, finished with a hot towel.",
             price: "KSH 350",
             duration: "45 min",
         },
         {
+            image: "https://storage.googleapis.com/msgsndr/nBxcqw0KYdRWRYv4QFkz/media/6772ae4aa28a50a7c9e52141.jpeg",
             title: "Skin Fade",
             description: "Seamless fade with razor finish.",
             price: "KSH 400",
             duration: "50 min",
         },
         {
+            image: "https://storage.googleapis.com/msgsndr/nBxcqw0KYdRWRYv4QFkz/media/6772ae4aa28a50a7c9e52141.jpeg",
             title: "Beard Trim & Shape",
             description: "Sculpting and conditioning for a perfect beard.",
             price: "KSH 250",
             duration: "30 min",
         },
         {
+            image: "https://storage.googleapis.com/msgsndr/nBxcqw0KYdRWRYv4QFkz/media/6772ae4aa28a50a7c9e52141.jpeg",
             title: "The Royal Shave",
             description: "Traditional straight razor shave with hot lather and oils.",
             price: "KSH 450",
             duration: "45 min",
         },
         {
+            image: "https://storage.googleapis.com/msgsndr/nBxcqw0KYdRWRYv4QFkz/media/6772ae4aa28a50a7c9e52141.jpeg",
             title: "Haircut & Beard Combo",
             description: "The full package. Haircut and beard trim.",
             price: "KSH 5500",
             duration: "1 hr 15 min",
         },
         {
+            image: "https://storage.googleapis.com/msgsndr/nBxcqw0KYdRWRYv4QFkz/media/6772ae4aa28a50a7c9e52141.jpeg",
             title: "Kids Cut",
             description: "For the young gentlemen (under 12).",
             price: "KSH 250",

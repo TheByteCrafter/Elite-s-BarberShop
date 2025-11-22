@@ -8,23 +8,27 @@ import Image from "next/image";
 export default function Home() {
   const featuredServices = [
     {
+      image: "https://storage.googleapis.com/msgsndr/nBxcqw0KYdRWRYv4QFkz/media/6772ae4aa28a50a7c9e52141.jpeg",
       title: "Classic Haircut",
       description: "Precision cut tailored to your style, finished with a hot towel.",
       price: "KSH 100",
       duration: "45 min",
     },
     {
+      image: "https://d2zdpiztbgorvt.cloudfront.net/us/images/205583/cover_156098708860.jpeg?size=640x427",
       title: "Beard Trim & Shape",
       description: "Sculpting and conditioning for a perfect beard.",
       price: "KSH 250",
       duration: "30 min",
     },
     {
+      image: "https://www.fifthavebarbershop.com/wp-content/uploads/2022/09/royal-hot-towel-shave-with-razor-1.webp",
       title: "The Royal Shave",
       description: "Traditional straight razor shave with hot lather and oils.",
       price: "KSH 450",
       duration: "45 min",
     },
+
   ];
 
   return (
@@ -82,7 +86,6 @@ export default function Home() {
               </ul>
             </div>
             <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-muted/50">
-              {/* Placeholder for an image */}
               <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
                 <Image src={"/barberShop.jpg"} alt="Shop Interior Image" width={500} height={500} className="object-cover rounded-2xl" />
               </div>
