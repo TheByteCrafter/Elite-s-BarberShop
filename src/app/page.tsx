@@ -1,65 +1,93 @@
-import Image from "next/image";
+import { Hero } from "@/components/Hero";
+import { ServiceCard } from "@/components/ServiceCard";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
+  const featuredServices = [
+    {
+      title: "Classic Haircut",
+      description: "Precision cut tailored to your style, finished with a hot towel.",
+      price: "KSH 100",
+      duration: "45 min",
+    },
+    {
+      title: "Beard Trim & Shape",
+      description: "Sculpting and conditioning for a perfect beard.",
+      price: "KSH 250",
+      duration: "30 min",
+    },
+    {
+      title: "The Royal Shave",
+      description: "Traditional straight razor shave with hot lather and oils.",
+      price: "KSH 450",
+      duration: "45 min",
+    },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="flex flex-col gap-16 pb-16">
+      <Hero />
+
+      <section className="container px-4 md:px-6">
+        <div className="flex flex-col items-center gap-4 text-center mb-10">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">
+            Our <span className="text-primary">Services</span>
+          </h2>
+          <p className="max-w-[700px] text-muted-foreground md:text-xl">
+            Premium grooming services designed for the modern gentleman.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {featuredServices.map((service, index) => (
+            <ServiceCard key={index} {...service} />
+          ))}
         </div>
-      </main>
+
+        <div className="mt-10 flex justify-center">
+          <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+            <Link href="/services">View All Services</Link>
+          </Button>
+        </div>
+      </section>
+
+      <section className="bg-secondary py-16">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-10 lg:grid-cols-2 items-center">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-white">
+                More Than Just a <span className="text-primary">Haircut</span>
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                We believe that a haircut is not just a service, but an experience.
+                Our shop is designed to be a sanctuary where you can relax, unwind,
+                and leave looking and feeling your best.
+              </p>
+              <ul className="grid gap-2 text-muted-foreground">
+                <li className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  Expert Barbers with 10+ years experience
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  Complimentary beverages
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  Premium grooming products
+                </li>
+              </ul>
+            </div>
+            <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-muted/50">
+              {/* Placeholder for an image */}
+              <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
+                <span className="text-lg">Shop Interior Image</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
