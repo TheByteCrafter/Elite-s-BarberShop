@@ -23,10 +23,10 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
-    { id: "classic", name: "Classic Haircut", price: 35 },
-    { id: "beard", name: "Beard Trim", price: 25 },
-    { id: "shave", name: "Royal Shave", price: 45 },
-    { id: "combo", name: "Haircut & Beard", price: 55 },
+    { id: "classic", name: "Classic Haircut", price: 100 },
+    { id: "beard", name: "Beard Trim", price: 250 },
+    { id: "shave", name: "Royal Shave", price: 450 },
+    { id: "combo", name: "Haircut & Beard", price: 550 },
 ];
 
 const timeSlots = [
@@ -90,7 +90,7 @@ export function BookingForm() {
                         <SelectContent>
                             {services.map((s) => (
                                 <SelectItem key={s.id} value={s.id}>
-                                    {s.name} - ${s.price}
+                                    {s.name} - KSH {s.price}
                                 </SelectItem>
                             ))}
                         </SelectContent>

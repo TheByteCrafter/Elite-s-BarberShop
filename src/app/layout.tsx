@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cut & Shave | Premium Barber Shop",
+  title: "Elite's Barber Shop | Premium Barber Shop",
   description: "Experience the best grooming services in town.",
 };
 

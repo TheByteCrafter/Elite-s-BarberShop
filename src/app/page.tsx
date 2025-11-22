@@ -2,6 +2,8 @@ import { Hero } from "@/components/Hero";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
+
 
 export default function Home() {
   const featuredServices = [
@@ -67,7 +69,7 @@ export default function Home() {
               <ul className="grid gap-2 text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-primary" />
-                  Expert Barbers with 10+ years experience
+                  Expert Barbers with 1+ years experience
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-primary" />
@@ -82,7 +84,7 @@ export default function Home() {
             <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-muted/50">
               {/* Placeholder for an image */}
               <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                <span className="text-lg">Shop Interior Image</span>
+                <Image src={"/barberShop.jpg"} alt="Shop Interior Image" width={500} height={500} className="object-cover rounded-2xl" />
               </div>
             </div>
           </div>
